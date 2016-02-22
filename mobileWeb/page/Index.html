@@ -1,24 +1,134 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<title>index</title>
-	<meta name="viewport" content="width=device-width,initial-scale=1">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>MyApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.3.css"/>
+
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/jquery.mobile-1.4.3.js"></script>
 </head>
+
 <body>
-<div data-role="page">
-	<div data-role="header">
-		<h1>我是标题</h1>
-	</div>
-	<div role="main" class="ui-content">
-		<h1>我是内容</h1>
-	</div>
-	<div data-role="footer">
-		<h1>我是footer</h1>
-	</div>
+
+<div data-role="page" id="index">
+    <div data-role="header" data-position="fixed">
+        <h1>我是index</h1>
+    </div>
+    <div role="main" class="ui-content">
+        <ul data-role="listview" data-inset="true">
+            <li><a href="#">
+                <h2>G1次</h2>
+                <p>xxx-xxx</p>
+                <p>xxx-xxx</p>
+                <p class="ui-li-aside">123-345</p>
+            </a></li>
+            <li><a href="#">List2</a></li>
+            <li><a href="#">List3</a></li>
+            <li><a href="#">List4</a></li>
+            <li><a href="#">List5</a></li>
+        </ul>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#index" data-icon="home">index</a> </li>
+                <li><a href="#main" data-icon="grid">main</a> </li>
+                <li><a href="#other" data-icon="bars">other</a> </li>
+            </ul>
+        </div>
+    </div>
 </div>
 
-<script src="../vendor/jquery-1.12.0.min.js"></script>
-<script src="jquery.mobile.custom.min.js"></script>
+<div data-role="page" id="main">
+    <div data-role="header">
+        <h1>我是main</h1>
+    </div>
+    <div role="main" class="ui-content">
+        <form>
+            <div class="ui-field-contain">
+                <label>title1</label>
+                <input type="text">
+            </div>
+            <div class="ui-field-contain">
+                <label>title2</label>
+                <input type="text">
+            </div>
+            <div class="ui-field-contain">
+                <label>title3</label>
+                <input type="text">
+            </div>
+        </form>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#index" data-icon="home">index</a> </li>
+                <li><a href="#main" data-icon="grid">main</a> </li>
+                <li><a href="#other" data-icon="bars">other</a> </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div data-role="page" id="other">
+    <div data-role="header">
+        <h1>我是main</h1>
+    </div>
+    <div role="main" class="ui-content">
+        <table data-role="table" data-mode="reflow" class="ui-responsive table-stroke">
+            <thead>
+            <tr>
+                <th>list1</th>
+                <th>list2</th>
+                <th>list3</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+            </tr>
+            </tbody>
+        </table>
+
+        <a href="#" id="getHello" class="ui-btn ui-btn-a">点我加载</a>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#index" data-icon="home">index</a> </li>
+                <li><a href="#main" data-icon="grid">main</a> </li>
+                <li><a href="#other" data-icon="bars">other</a> </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
 </body>
+
+<script type="text/javascript">
+    $("#getHello").on("click",function(){
+        $.mobile.loading("show");   //开始显示加载中
+
+        $.ajax({
+            type: 'get',
+            url: "http://http://114.215.156.115:8001/api/Home/index",
+            timeout:5000,
+            success: function(data)
+            {
+                alert(data);
+
+                $.mobile.loading("hide");   //结束显示加载中
+            },
+            error:function(){
+                alert("error");
+
+                $.mobile.loading("hide");   //结束显示加载中
+            }
+        });
+    });
+</script>
 </html>
