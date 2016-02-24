@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>列表页面</title>
+    <script type="text/javascript" src="angular.js"></script>
+    <script type="text/javascript" src="route.js"></script>
+</head>
+<body>
+   <ul>
+       <li ng-repeat="item in list"><a href="#/detail/{{item.id}}" ng-bind="item.title"></a></li>
+   </ul>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular | Bootstrap Web app</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+
+    <!-- JQuery -->
+    <script src="Common/Vendor/jquery/jquery-1.8.3.min.js"></script>
+
+    <!-- Angular -->
+    <script src="Common/Vendor/angular/angular.js"></script>
+    <script src="Common/Vendor/angular/angular-route.min.js"></script>
+
+    <!-- ionic -->
+    <link type="text/css" rel="stylesheet" href="Common/Vendor/ionic-v1.2.4/css/ionic.min.css">
+    <script src="Common/Vendor/ionic-v1.2.4/js/ionic.bundle.min.js"></script>
+    <style>
+        body {
+            cursor: url('http://www.runoob.com/static/img/finger.png'), auto;
+        }
+    </style>
+
+    <!-- App -->
+    <script src="Common/js/app.js"></script>
+    <script src="Common/js/route.js"></script>
+
+    <!-- Modules Home -->
+    <script src="Modules/Home/Controller/HomeCtrl.js"></script>
+
+    <!-- Modules List -->
+    <script src="Modules/List/controller/mainCtrl.js"></script>
+    <script src="Modules/List/controller/detailCtrl.js"></script>
+
+</head>
+<body ng-app="app">
+<ion-side-menus>
+    <ion-side-menu-content>
+        <!--head-->
+        <ion-header-bar class="bar-dark">
+            <h1 class="title">Todo</h1>
+
+            <!-- 新增按钮-->
+            <button class="button button-icon">
+                <i class="icon ion-compose"></i>
+            </button>
+
+        </ion-header-bar>
+
+        <!--content-->
+        <ion-content>
+            <div class="content">
+                <div ng-view></div>
+            </div>
+        </ion-content>
+
+    </ion-side-menu-content>
+
+    <!-- 左边栏 -->
+    <ion-side-menu side="left">
+        <ion-header-bar class="bar-dark">
+            <h1 class="title">Projects</h1>
+            <button class="button button-icon ion-plus">
+            </button>
+        </ion-header-bar>
+        <ion-content scroll="false">
+            <ion-list>
+                <ion-item>
+                    123123asdasd
+                </ion-item>
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+
+</ion-side-menus>
+</body>
+</html>

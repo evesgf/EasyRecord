@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>列表页面</title>
+    <link type="text/css" rel="stylesheet" href="./css/css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="angular.js"></script>
+    <script src="angular-route.min.js"></script>
+    <script src="./route.js"></script>
+    <script src="./main.js"></script>
+    
+</head>
+
+<body ng-app="app">
+    <header>
+        <h1>Header</h1>
+    </header>
+    <div class="content">
+        <div ng-view></div>
+    </div>
+    <footer>
+        <h5>Footer</h5>
+    </footer>
+</body>
+
+</html>
